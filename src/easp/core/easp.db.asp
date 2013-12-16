@@ -281,7 +281,9 @@ Class EasyAsp_db
 	'参数：	@s		- SQL语句
 	'返回：	ADODB.RecordSet对象
 	Public Function GetRecordBySQL(ByVal s)
-		'On Error Resume Next
+		'将原本注释掉的下面一行的取消注释。注释掉会引起UTF-8版本的Easp.Debug = True失效，报错会出现乱码
+		'By: 才子一生平安
+		On Error Resume Next
 		Dim rs
 		Set rs = Server.CreateObject("Adodb.Recordset")
 		With rs
